@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -8,7 +7,6 @@ pipeline {
                 checkout scm
             }
         }
-
         stage('Build') {
             steps {
                 echo "Building the project..."
@@ -16,7 +14,6 @@ pipeline {
                 // Example for Java: sh 'mvn clean install'
             }
         }
-
         stage('Test') {
             steps {
                 echo "Running tests..."
@@ -24,7 +21,6 @@ pipeline {
                 // Example: sh 'mvn test'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo "Deploying the project..."
@@ -33,7 +29,6 @@ pipeline {
             }
         }
     }
-
     post {
         success {
             echo "Pipeline completed successfully ✅"
